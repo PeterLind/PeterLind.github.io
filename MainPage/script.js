@@ -1,43 +1,29 @@
-function loadHTML(path, target) 
-    {
-        fetch(`${path}`)
-        .then(res => {
-            if(res.ok)
-                {
-                    return res.text();
-                }
+async function injectHTML(filePath,elem) {
+    try {
+        const response = await fetch(filePath);
+        if (!response.ok) {
+            return;
+        }
+        const text = await response.text();
+        elem.innerHTML = text;
+        elem.querySelectorAll("script").forEach(script => {
+            const newScript = document.createElement("script");
+            Array.from(script.attributes).forEach(attr =>
+                newScript.setAttribute(attr.name, attr.value)
+            );
+            newScript.appendChild(
+                document.createTextNode(script.innerHTML)
+            )
+            script.parentNode.replaceChild(newScript, script);
         })
-        .then(html => {
-            document.querySelector(target).innerHTML = html;
-        });
-    };
-
-window.onload = function()
-{
-    loadHTML('../Modules/body.html', '#con');
-}
-document.addEventListener('DOMContentLoaded', () => {
-
-// Get all "navbar-burger" elements
-const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-// Check if there are any navbar burgers
-if ($navbarBurgers.length > 0) {
-
-// Add a click event on each of them
-$navbarBurgers.forEach(el => {
-    el.addEventListener('click', () => {
-
-        // Get the target from the "data-target" attribute
-        const target = el.dataset.target;
-        const $target = document.getElementById(target);
-
-        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-        el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-
-        });
-    });
+    } catch (err) {
+        console.error(err.message);
     }
+}
+function injectAll() 
+{
+    document.querySelectorAll("div[include]").forEach((elem) => {
+        injectHTML(elem.getAttribute("include"),elem); })
+}
 
-});
+injectAll();

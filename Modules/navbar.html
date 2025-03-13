@@ -1,0 +1,78 @@
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.2/css/bulma.min.css" />
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+    body {font-family: 'Nunito', sans-serif;}
+
+    nav.navbar {
+        height: 2rem !important;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06) !important;
+    }
+    .navbar-item
+    {
+        margin-right: 10px;
+    }
+    .navbar-item:last-child
+    {
+        margin-right: 0px;
+    }
+</style>
+
+<header class="navbar">
+    <div class="container">
+        <span class="navbar-burger burger" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item is-active is-size-4 has-text-weight-semibold" id="start-link" href="#">
+                    Home
+                </a>
+                <a class="navbar-item is-size-4 has-text-weight-semibold" id="project-link" href="#">
+                    Examples
+                </a>
+                <a class="navbar-item is-size-4 has-text-weight-semibold" id="depth-link" href="#">
+                    Features
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    const startLink = document.getElementById("start-link");
+    const projectLink = document.getElementById("project-link");
+    const depthLink = document.getElementById("depth-link");
+    
+    const protocol = window.location.protocol; // e.g., "http:" or "https:"
+    const hostname = window.location.hostname; // e.g., "example.com"
+    const port = window.location.port ? `:${window.location.port}` : ''; // e.g., ":3000" if a port is specified
+    const fullUrl = `${protocol}//${hostname}${port}/`;
+    
+    startLink.setAttribute("href", fullUrl + "main.html");
+    projectLink.setAttribute("href", fullUrl + "GameProjects/main.html");
+    depthLink.setAttribute("href", fullUrl + "Depth/main.html");
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+        // Add a click event on each of them
+        $navbarBurgers.forEach(el => {
+            el.addEventListener('click', () => {
+                // Get the target from the "data-target" attribute
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+            });
+        });
+    }
+</script>

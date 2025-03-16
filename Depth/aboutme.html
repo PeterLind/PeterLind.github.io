@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Peter's GameProjects</title>
+    <!-- Bulma Version 1-->
+
+</head>
+
+<body>
+    <div id="navigationBar", include="../Modules/navbar.html"></div>
+    <div class="combiner">
+        <p class="aboutme-text">
+            I am <b>vision-oriented</b> and driven by a clear direction. I value a professional team that <b>cares</b> and <b>respects</b> each other skills and where <b>responsibility</b> for both once own and the companys commitments is key.  I am a <b>team player</b> who focuses on moving the project, with the ability to see the <b>big picture, prioritising</b> work in a <b>structured </b> and <b>analytical </b>way against set targets.
+            <br><br>I have a strong interest in network creation and seek opportunities to apply my skills in this area within a professional setting.
+        </p>
+        <div class="right-section">
+            <img src="../Pictures/crime.png" class="aboutme-profile" alt="image"></img>
+            <p class="aboutme-text-under-profile">
+                <b>References available on request.</b>
+            </p>
+        </div>
+    </div>
+    <div id="footerBar" include="../Modules/footer.html"></div>
+
+
+    <script src="../MainPage/script.js"></script>
+</body>
+</html>
+
+<style>
+
+    .combiner
+    {
+        display:flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2%;
+    }
+    .aboutme-text
+    {
+        flex:3;
+        text-align: justify;
+        padding-left: 10%;
+        padding-top: 10%;
+        font-size: 1.2vw;
+    }
+    .aboutme-text-under-profile
+    {
+        font-size: 1.8vw;        
+        font-style: italic;
+        text-align: center;
+        width: 100%;
+    }
+    .aboutme-profile
+    {
+        width: auto;
+        height: auto;
+        
+    }
+    .right-section
+    {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 5%;
+    }
+    @media (max-width: 800px) 
+    {
+        .combiner
+        {
+            flex-direction: column-reverse; 
+            align-items: center;
+            gap: 20px;
+        }
+        .aboutme-text
+        {
+        
+            text-align: justify;
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-bottom: 10%;
+            font-size: 4vw;
+        }
+        .aboutme-text-under-profile
+        {
+            display: none;
+        }
+        .aboutme-profile
+        {
+            width: 65%;
+            height: auto;
+            padding-right: 0%;
+        }
+        .right-section
+        {
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            border: none;
+        }
+    }
+</style>

@@ -1,18 +1,47 @@
 <section class="hero">
     <div class="hero-body">
       <div class="container has-text-centered">
-        <div class="columns">
-          <figure class="column">
-              <a id="project-link" href="GameProjects/main.html"><img src="../Pictures/crime.png" alt="Blog image"></a>
-              <figcaption class="subtitle"> This is a Text</figcaption>
+        <div class="grid">
+          <figure class="cell">
+            <div class="image-container">
+              <a id="project-link" href="GameProjects/main.html">
+                <img src="../Pictures/crime.png" class="image" alt="image">
+                <figcaption class="above-top-center"> This is a Text</figcaption>
+              </a>
+            </div>
           </figure>
-          <figure class="column">
-            <a id="project-link" href="GameProjects/main.html"><img src="../Pictures/crime.png" alt="Blog image"></a>
-            <figcaption class="subtitle"> This is a Text</figcaption>
+          <figure class="cell">
+            <div class="image-container">
+              <a id="project-link" href="GameProjects/main.html">
+                <img src="../Pictures/crime.png" class="image" alt="Blog image">
+                <figcaption class="above-top-center"> This is a Text</figcaption>
+              </a>
+            </div>
           </figure>
-          <figure class="column">
-            <a id="project-link" href="GameProjects/main.html"><img src="../Pictures/crime.png" alt="Blog image"></a>
-            <figcaption class="subtitle"> This is a Text</figcaption>
+          <figure class="cell">
+            <div class="image-container">
+              <a id="project-link" href="GameProjects/main.html">
+                <img src="../Pictures/crime.png" class="image" alt="Blog image">
+                <figcaption class="above-top-center"> This is a Text</figcaption>
+              </a>
+            </div>
+          </figure>
+          <figure class="cell">
+            <div class="image-container">
+              <a id="project-link" href="GameProjects/main.html">
+                <img src="../Pictures/crime.png" class="image" alt="Blog image">
+                <figcaption class="above-top-center"> This is a Text</figcaption>
+              </a>
+            </div>
+          </figure>
+          <figure class="cell">
+            <div class="image-container">
+              <a id="project-link" href="GameProjects/main.html">
+                <img src="../Pictures/crime.png" class="image" alt="Blog image">
+                <figcaption class="above-top-center"> This is a Text</figcaption>
+              </a>
+            </div>
+            
           </figure>
         </div>
       </div>
@@ -20,3 +49,70 @@
     </div>
   </div>
 </section>
+
+<style>
+
+@media (prefers-color-scheme:light) {
+  .image-container {
+    position: relative;
+    display: inline-block;
+    border: 5px solid #e7ece8;
+    background-color: #e7ece8;
+    border-radius: 5%;
+    transition: background-color 0.2s ease, border 0.2 ease;
+  }
+  .image-container:hover
+  {
+    background-color: #d8ddd9;
+    border: 5px #d8ddd9;
+  }
+  .above-top-center
+  {
+    top: 100%;
+    left: 0%;
+    transform: translate(0%, 0%);
+    color: #74717b;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px 0px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5%;
+  }
+}
+
+@media (prefers-color-scheme:dark) 
+{
+  .image-container {
+    position: relative;
+    display: inline-block;
+    border: 5px solid #111311;
+    background-color: #111311;
+    border-radius: 5%;
+    transition: background-color 0.2s ease, border 0.2 ease;
+  }
+  .image-container:hover
+  {
+    background-color: #2c2e2c;
+    border: 5px #2c2e2c;
+  }
+  .above-top-center
+  {
+    top: 100%;
+    left: 0%;
+    transform: translate(0%, 0%);
+    color: white;
+    text-align: center;
+    padding: 5px 0px;
+    width: 100%;
+  }
+  .image {
+    border-radius: 2%;
+  }
+}
+</style>

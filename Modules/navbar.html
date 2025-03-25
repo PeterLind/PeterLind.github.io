@@ -1,47 +1,70 @@
-<head>
-    <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.2/css/bulma.min.css" />
-</head>
-
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+    :root
+    {
+        color-scheme: light dark;
 
-    body {font-family: 'Nunito', sans-serif;}
+        --light-bg: ghostwhite;
+        --light-navbg: rgb(0,0,0);
+        --light-color: rgb(0, 0, 0);
+        --light-code: tomato;
 
-    nav.navbar {
-        height: 2rem !important;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06) !important;
+        --dark-bg: rgb(17, 38, 56);
+        --dark-navbg: rgb(78, 166, 153);
+        --dark-color: ghostwhite;
+        --dark-code: gold;
+    }
+    *{
+        list-style-type: none;
+    }
+    header {
+        font-size: 2rem;
+        border: solid;
+        background-color: light-dark(var(--light-bg), var(--dark-bg));
+        list-style-type: none;
+        font-family: "Roboto Mono", monospace;
+        
+    }
+    ul {
+        width: 100%;
+        height: 8vh;
+        margin: auto;
+        position: relative;
+        justify-content: space-between;
+        text-align: center;
+        direction: rtl;
     }
     .navbar-item
     {
-        margin-right: 10px;
+        padding: 1rem ;
+        text-transform: uppercase;
+        cursor: pointer;
+        color: light-dark(var(--light-color), var(--dark-color));
+        min-width: 80px;
+        margin: auto;
     }
-    .navbar-item:last-child
+    li:hover {
+        background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+        background-size: 100% 100%;
+        color: #27262c;
+        text-shadow: 0 -1px 0 #ef816c;
+        font-weight: bold;
+    }
+    li:active {
+     transform: translateY(4px);
+    }
+    li:last-child
     {
-        margin-right: 0px;
+        padding-right: 10%;
     }
 </style>
 
-<header class="navbar">
-    <div class="container">
-        <span class="navbar-burger burger" data-target="navbarMenu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
-        <div id="navbarMenu" class="navbar-menu">
-            <div class="navbar-end">
-                <a class="navbar-item is-size-4 has-text-weight-semibold" id="start-link" href="#">
-                    Home
-                </a>
-                <a class="navbar-item is-size-4 has-text-weight-semibold" id="project-link" href="#">
-                    Examples
-                </a>
-                <a class="navbar-item is-size-4 has-text-weight-semibold" id="depth-link" href="#">
-                    About me
-                </a>
-            </div>
-        </div>
-    </div>
+<header>
+    <ul>
+        <li class="navbar-item" id="start-link" href="#"> Home </li>
+        <li class="navbar-item" id="start-link" href="#"> Examples</li>
+        <li class="navbar-item" id="start-link" href="#"> About me</li>
+    </ul>
 </header>
 
 <script>

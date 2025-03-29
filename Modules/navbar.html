@@ -1,5 +1,6 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+    /*General*/
     :root
     {
         color-scheme: light dark;
@@ -17,69 +18,90 @@
     *{
         list-style-type: none;
     }
+    a{
+        cursor: pointer;
+    }
     header {
-        font-size: 2rem;
+        font-size: 2vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         border: solid;
+        border-radius: 0vw 0vw 1vw 1vw;
         background-color: light-dark(var(--light-bg), var(--dark-bg));
         list-style-type: none;
         font-family: "Roboto Mono", monospace;
+    }
+
+
+    ul.image-links-list, ul.website-links-list {
         
+        display: flex;
+        list-style: none;
+        overflow: hidden;
+        height: 3vw;
+        margin: 0;
+        gap: 2vw;
+
     }
-    ul {
-        width: 100%;
-        height: 8vh;
-        margin: auto;
-        position: relative;
-        justify-content: space-between;
-        text-align: center;
-        direction: rtl;
-    }
-    .navbar-item
+    /*Images*/
+    img.navbar-image
     {
-        padding: 1rem ;
-        text-transform: uppercase;
-        cursor: pointer;
-        color: light-dark(var(--light-color), var(--dark-color));
-        min-width: 80px;
-        margin: auto;
+        display: block;
+        width: 3vw;
+        height: auto;
     }
-    li:hover {
+    /*Pages options*/
+    li.navbar-item
+    {
+        padding-right: 1vw;
+        padding-left: 1vw;
+        text-transform: uppercase;
+        text-align: right;
+        white-space: nowrap;
+    }
+    li.navbar-item > a{
+        color: light-dark(var(--light-color), var(--dark-color));
+        text-decoration: none;
+    }
+    li.navbar-item:hover {
+
         background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
         background-size: 100% 100%;
         color: #27262c;
         text-shadow: 0 -1px 0 #ef816c;
         font-weight: bold;
     }
-    li:active {
+    li.navbar-item:active {
      transform: translateY(4px);
     }
-    li:last-child
-    {
-        padding-right: 10%;
-    }
+
 </style>
 
 <header>
-    <ul>
-        <li class="navbar-item" id="start-link" href="#"> Home </li>
-        <li class="navbar-item" id="start-link" href="#"> Examples</li>
-        <li class="navbar-item" id="start-link" href="#"> About me</li>
+    <ul class="image-links-list">
+        <li><a><img class="navbar-image" src="../Pictures/email.png"></img></a></li>
+        <li><a><img class="navbar-image" src="../Pictures/email.png"></img></a></li>
+        <li><a><img class="navbar-image" src="../Pictures/email.png"></img></a></li>
+    </ul>
+    <ul class="website-links-list">
+        <li class="navbar-item" ><a id="start-link"  href="#"> Home </a></li>
+        <li class="navbar-item" ><a id="project-link"  href="#"> Examples </a></li>
+        <li class="navbar-item" ><a id="depth-link"  href="#"> About Me </a></li>
     </ul>
 </header>
 
 <script>
-    const startLink = document.getElementById("start-link");
-    const projectLink = document.getElementById("project-link");
-    const depthLink = document.getElementById("depth-link");
-    
+
     const protocol = window.location.protocol; // e.g., "http:" or "https:"
     const hostname = window.location.hostname; // e.g., "example.com"
     const port = window.location.port ? `:${window.location.port}` : ''; // e.g., ":3000" if a port is specified
     const fullUrl = `${protocol}//${hostname}${port}/`;
-    
-    startLink.setAttribute("href", fullUrl + "index.html");
-    projectLink.setAttribute("href", fullUrl + "GameProjects/main.html");
-    depthLink.setAttribute("href", fullUrl + "Depth/aboutme.html");
+
+    const startLink = document.getElementById("start-link");
+    const projectLink = document.getElementById("project-link");
+    const depthLink = document.getElementById("depth-link");
+
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
     

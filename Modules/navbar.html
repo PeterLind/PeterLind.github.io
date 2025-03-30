@@ -15,9 +15,6 @@
         --dark-color: ghostwhite;
         --dark-code: gold;
     }
-    *{
-        list-style-type: none;
-    }
     a{
         cursor: pointer;
     }
@@ -29,36 +26,48 @@
         border: solid;
         border-radius: 0vw 0vw 1vw 1vw;
         background-color: light-dark(var(--light-bg), var(--dark-bg));
-        list-style-type: none;
+
         font-family: "Roboto Mono", monospace;
     }
 
 
-    ul.image-links-list, ul.website-links-list {
-        
-        display: flex;
+    ul.image-links-list {
+        display: inline-flex;
+        direction: rtl;
         list-style: none;
         overflow: hidden;
         height: 3vw;
         margin: 0;
         gap: 2vw;
+        padding-left: 1vw;
+    }
+    ul.website-links-list {
+        
+        display: inline-flex;
+        list-style: none;
+        overflow: hidden;
+        height: 3vw;
+        margin: 0;
+        gap: 1vw;
 
     }
     /*Images*/
     img.navbar-image
     {
-        display: block;
+        direction: rtl;
         width: 3vw;
         height: auto;
+        filter: grayscale(1) invert(1); /* Only for Dark mode <- remove later*/ 
     }
     /*Pages options*/
     li.navbar-item
     {
-        padding-right: 1vw;
-        padding-left: 1vw;
         text-transform: uppercase;
         text-align: right;
         white-space: nowrap;
+        padding-right: 0.5vw;
+        padding-left: 0.5vw;
+        text-shadow: 0 5px 15px light-dark(var(--dark-color), var(--light-color));
     }
     li.navbar-item > a{
         color: light-dark(var(--light-color), var(--dark-color));
@@ -68,8 +77,6 @@
 
         background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
         background-size: 100% 100%;
-        color: #27262c;
-        text-shadow: 0 -1px 0 #ef816c;
         font-weight: bold;
     }
     li.navbar-item:active {
@@ -80,9 +87,9 @@
 
 <header>
     <ul class="image-links-list">
-        <li><a><img class="navbar-image" src="../Pictures/email.png"></img></a></li>
-        <li><a><img class="navbar-image" src="../Pictures/email.png"></img></a></li>
-        <li><a><img class="navbar-image" src="../Pictures/email.png"></img></a></li>
+        <li><a href="https://github.com/PeterLind"><img class="navbar-image" src="../Pictures/github-logo.png"></img></a></li>
+        <li><a href="https://www.linkedin.com/in/peter-lindberg99"><img class="navbar-image" src="../Pictures/linkedin.png"></img></a></li>
+        <li><a href="mailto:lindbergp1999@outlook.com"><img class="navbar-image" src="../Pictures/email.png"></img></a></li>
     </ul>
     <ul class="website-links-list">
         <li class="navbar-item" ><a id="start-link"  href="#"> Home </a></li>

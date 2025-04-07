@@ -94,21 +94,23 @@
     <ul class="website-links-list">
         <li class="navbar-item" ><a id="start-link"  href="#"> Home </a></li>
         <li class="navbar-item" ><a id="project-link"  href="#"> Examples </a></li>
-        <li class="navbar-item" ><a id="depth-link"  href="#"> About Me </a></li>
+        <!--<li class="navbar-item" ><a id="depth-link"  href="#"> About Me </a></li>-->
     </ul>
 </header>
 
 <script>
-
+    const startLink = document.getElementById("start-link");
+    const projectLink = document.getElementById("project-link");
+    const depthLink = document.getElementById("depth-link");
+    
     const protocol = window.location.protocol; // e.g., "http:" or "https:"
     const hostname = window.location.hostname; // e.g., "example.com"
     const port = window.location.port ? `:${window.location.port}` : ''; // e.g., ":3000" if a port is specified
     const fullUrl = `${protocol}//${hostname}${port}/`;
-
-    const startLink = document.getElementById("start-link");
-    const projectLink = document.getElementById("project-link");
-    const depthLink = document.getElementById("depth-link");
-
+    
+    startLink.setAttribute("href", fullUrl + "index.html");
+    projectLink.setAttribute("href", fullUrl + "GameProjects/main.html");
+    depthLink.setAttribute("href", fullUrl + "Depth/aboutme.html");
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
     
@@ -121,6 +123,8 @@
                 const target = el.dataset.target;
                 const $target = document.getElementById(target);
                 
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                el.classList.toggle('is-active');
                 $target.classList.toggle('is-active');
             });
         });

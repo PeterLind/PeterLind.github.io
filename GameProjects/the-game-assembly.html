@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PL: The Game Assembly</title>
+
+</head>
+
+<body>
+  <div id="navigationBar", include="../Modules/navbar.html"></div>
+
+  <h1 style="font-size: 5vw; text-align: center; margin: 0; padding: 0; padding-top: 1%;"> The Game Assembly</h1>
+  <section class="hero is-info is-fullheight">
+    <div class="container">
+      <ul class="assembly-line">
+        <li class="SP1">
+          <div class="project-frame">
+            <iframe src="https://www.youtube.com/embed/xT58q5eBHQ4"></iframe>
+            <div class="context-line-info">
+              <h1>Light Line</h1>
+              <p>
+                <b>Engine:</b> Unity 2023.2.16f1<br>
+                <b>Team Size:</b> 12<br>
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="SP2">
+          <div class="project-frame">
+            <div class="context-line-info">
+              <h1>Tale Of The Nether Oakfield</h1>
+              <p>
+                <b>Engine:</b> Unity 2023.2.16f1<br>
+                <b>Team Size:</b> 12<br>
+              </p>
+            </div>
+            <iframe src="https://www.youtube.com/embed/d95eDvZbWtw"></iframe>
+          </div>
+        </li>
+        <li class="SP3">
+          <div class="project-frame">
+            <iframe src="https://www.youtube.com/embed/9zqatPxgucU"></iframe>
+            <div class="context-line-info">
+              <h1>Gaia</h1>
+              <p>
+                <b>Inhouse Engine:</b> TGE<br>
+                <b>Team Size:</b> 11<br>
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="SP4">
+          <div class="project-frame">
+            <div class="context-line-info">
+              <h1>Redemption</h1>
+              <p>
+                <b>Inhouse Engine:</b> TGE<br>
+                <b>Team Size:</b> 11<br>
+              </p>
+            </div>
+            <iframe src="https://www.youtube.com/embed/tUbJmKW6i1E"></iframe>
+          </div>
+        </li>
+        <li class="SP5">
+          <div class="project-frame">
+            <iframe src="https://www.youtube.com/embed/QloOL_ejopk"></iframe>
+            <div class="context-line-info">
+              <h1>Exposé</h1>
+              <p>
+                <b>Custom Engine:</b> FraktalOktav<br>
+                <b>Team Size:</b> 13<br>
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="SP6">
+          <div class="project-frame">
+            <div class="context-line-info">
+              <h1>Aztec 2</h1>
+              <p>
+                <b>Custom Engine:</b> FraktalOktav<br>
+                <b>Team Size:</b> 13<br>
+              </p>
+            </div>
+            <iframe src="https://www.youtube.com/embed/onA99OActUU"></iframe>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <script src="../MainPage/script.js"></script>
+</body>
+</html>
+
+<style>
+.container {
+    max-width: 50vw;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.assembly-line {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style-type: none; 
+    padding: 0;
+}
+
+.assembly-line li {
+    width: 100%; 
+    display: flex;
+    justify-content: flex-start; 
+    margin: 20px;
+}
+
+.assembly-line li:nth-child(even) {
+    justify-content: flex-end; /* Align even items to the right */
+}
+
+.project-frame {
+    display: flex; /* Use flexbox for the inner div */
+    align-items: start; /* Center items vertically */
+    width: 100%; /* Limit the width of the content */
+    background-color: #2b2b2b; /* Optional: background color for visibility */
+    border-radius: 8px; /* Optional: rounded corners */
+    padding: 5px 5px;
+}
+.project-frame iframe
+{
+  display: inherit;
+  border-radius: 8px;
+  width: 70%;
+  height: 35vh;
+}
+
+.context-line-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1vw; /* Add some space between the iframe and the text */
+  width: 30%; /* Optional: limit the width of the text */
+  font-size: 24px;
+}
+
+</style>

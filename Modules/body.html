@@ -1,59 +1,61 @@
 <section class="hero">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <div class="grid">
-          <figure class="cell">
-            <div class="image-container">
-              <a id="project-link" href="GameProjects/main.html">
-                <img src="../Pictures/crime.png" class="image" alt="image">
-                <figcaption class="above-top-center"> This is a Text</figcaption>
-              </a>
-            </div>
-          </figure>
-          <figure class="cell">
-            <div class="image-container">
-              <a id="project-link" href="GameProjects/main.html">
-                <img src="../Pictures/crime.png" class="image" alt="Blog image">
-                <figcaption class="above-top-center"> This is a Text</figcaption>
-              </a>
-            </div>
-          </figure>
-          <figure class="cell">
-            <div class="image-container">
-              <a id="project-link" href="GameProjects/main.html">
-                <img src="../Pictures/crime.png" class="image" alt="Blog image">
-                <figcaption class="above-top-center"> This is a Text</figcaption>
-              </a>
-            </div>
-          </figure>
-          <figure class="cell">
-            <div class="image-container">
-              <a id="project-link" href="GameProjects/main.html">
-                <img src="../Pictures/crime.png" class="image" alt="Blog image">
-                <figcaption class="above-top-center"> This is a Text</figcaption>
-              </a>
-            </div>
-          </figure>
-          <figure class="cell">
-            <div class="image-container">
-              <a id="project-link" href="GameProjects/main.html">
-                <img src="../Pictures/crime.png" class="image" alt="Blog image">
-                <figcaption class="above-top-center"> This is a Text</figcaption>
-              </a>
-            </div>
-            
-          </figure>
-        </div>
-      </div>
-        <hr class="is-divider">
-    </div>
-  </div>
+
 </section>
 
-<style>
+<ol>
 
-@media (prefers-color-scheme:light) {
-  .image-container {
+
+  <div class="carousel">
+    <main class="carousel-list">
+      <div class="carousel-object">
+        <div class="image-container">
+          <a id="project-link" href="GameProjects/main.html">
+            <img src="../Pictures/crime.png" class="image" alt="image">
+            <figcaption class="above-top-center"> This is a Text</figcaption>
+          </a>
+        </div>
+      </div>
+      <div class="carousel-object">
+        <div class="image-container">
+          <a id="project-link" href="GameProjects/main.html">
+            <img src="../Pictures/crime.png" class="image" alt="Blog image">
+            <figcaption class="above-top-center"> This is a Text</figcaption>
+          </a>
+        </div>
+      </div>
+      <div class="carousel-object">
+        <div class="image-container">
+          <a id="project-link" href="GameProjects/main.html">
+            <img src="../Pictures/crime.png" class="image" alt="Blog image">
+            <figcaption class="above-top-center"> This is a Text</figcaption>
+          </a>
+        </div>
+      </div>
+      <div class="carousel-object">
+        <div class="image-container">
+          <a id="project-link" href="GameProjects/main.html">
+            <img src="../Pictures/crime.png" class="image" alt="Blog image">
+            <figcaption class="above-top-center"> This is a Text</figcaption>
+          </a>
+        </div>
+      </div>
+      <div class="carousel-object">
+        <div class="image-container">
+          <a id="project-link" href="GameProjects/main.html">
+            <img src="../Pictures/crime.png" class="image" alt="Blog image">
+            <figcaption class="above-top-center"> This is a Text</figcaption>
+          </a>
+        </div>
+        
+      </div>
+    </main>
+  </div>
+</ol>
+  
+  <style>
+    
+    @media (prefers-color-scheme:light) {
+      .image-container {
     position: relative;
     display: inline-block;
     border: 5px solid #e7ece8;
@@ -88,6 +90,28 @@
 
 @media (prefers-color-scheme:dark) 
 {
+  .carousel
+  {
+    grid-template-rows: 500px 100px;
+    grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
+    align-items: center;
+    justify-items: center;
+  }
+  .carousel-list
+  {
+    grid-row: 1 / 2;
+    grid-column: 1 / 8;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    --items: 5;
+    --middle: 3;
+    --position: 1;
+    pointer-events: none;
+  }
   .image-container {
     position: relative;
     display: inline-block;
